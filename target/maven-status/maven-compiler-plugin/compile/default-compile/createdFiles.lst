@@ -1,0 +1,9 @@
+com\example\HotelBooking\config\ModelMapperConfig.class
+com\example\HotelBooking\HotelBookingApplication.class
+com\example\HotelBooking\enums\RoomType.class
+com\example\HotelBooking\enums\PaymentGateway.class
+com\example\HotelBooking\entities\User.class
+com\example\HotelBooking\enums\BookingStatus.class
+com\example\HotelBooking\enums\PaymentStatus.class
+com\example\HotelBooking\enums\UserRole.class
+com\example\HotelBooking\enums\NotificationType.class
