@@ -1,7 +1,9 @@
-package com.example.HotelBooking.entities;
+package com.example.HotelBooking.dtos;
+
 
 import com.example.HotelBooking.enums.NotificationType;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,29 +12,27 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Entity
 @Data
-@Table(name = "notifications")
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Notification {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class NotificationDTO {
     private Long id;
 
+    @NotBlank(message = "Subject is required")
     private String subject;
 
-    @NotBlank(message = "recipient is required")
+    @NotBlank(message = "Recipient is required")
     private String recipient;
 
     private String body;
 
     private String bookingReference;
 
-    @Enumerated(EnumType.STRING)
     private NotificationType type;
 
-    private final LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
 }

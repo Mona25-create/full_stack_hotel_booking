@@ -37,7 +37,9 @@ public class User {
     private String lastName;
 
     @NotBlank(message = "Phone Number number is required")
+    @Column(name = "phone_number")
     private String phoneNumber;
+
     @Enumerated(EnumType.STRING)
     private UserRole role; //eg customer or admin
 

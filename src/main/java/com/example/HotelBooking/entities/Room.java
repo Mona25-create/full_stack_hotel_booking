@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-@Table(name = "users") //wil be created in db
+@Table(name = "rooms ") //wil be created in db
 @AllArgsConstructor
 @NoArgsConstructor
 
